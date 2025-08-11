@@ -45,9 +45,9 @@ st.write("Hover over the pins to see detailed project information. Click on a pi
 # Ensure the CSV file 'MPPC_projects_1H2025_2025-08-06_map_source.csv' is available in the environment.
 try:
     # Using the exact filename provided by the user
-    df = pd.read_csv("PAPTC_projects_1H_2025_cleaned_geocoded_streamlit_map_ready.csv")
+    df = pd.read_csv("PAPTC_projects_1H2025_map_table.csv")
 except FileNotFoundError:
-    st.error("Error: The CSV file 'PAPTC_projects_1H_2025_cleaned_geocoded_streamlit_map_ready.csv' was not found.")
+    st.error("Error: The CSV file 'PAPTC_projects_1H2025_map_table.csv' was not found.")
     st.stop()
 
 # --- Data Preprocessing and Handling Missing Values ---
