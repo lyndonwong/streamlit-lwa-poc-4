@@ -1,5 +1,5 @@
-# LWA POC 2 2025-07-30
-# Pursues code changes to connect my streamlit LWA POC app to real local planning commission data.
+# LWA POC 4 2025-08-11
+# Pursues code changes to connect streamlit LWA POC app to Palo Alto CA planning commission data.
 
 import streamlit as st
 import pandas as pd
@@ -17,12 +17,12 @@ from streamlit_player import st_player
 st.set_page_config(layout="wide")
 st.logo("LWA-v2-square.png", size="large")    
 st.image("LWA-demo-lab-bar.png", use_container_width=True )
-st.title("Your Tracker: Menlo Park Planning Commission")
+st.title("Your Tracker: Palo Alto Planning Commission")
 
 # Explainer video
 st.subheader("The Explainer")
-st.write("Your 7 minute video on Menlo Park's real estate investment climate in mid 2025.")
-st_player("https://player.vimeo.com/video/1108574373")
+st.write("Your 7 minute video on Palo Alto's real estate investment climate in mid 2025.")
+st_player("https://player.vimeo.com/video/1109170740")
 
 # DEPRECATED 8/8/2025
 # Somewhat redundant with explainer video. Also a big in the audio file prevents playback
@@ -45,9 +45,9 @@ st.write("Hover over the pins to see detailed project information. Click on a pi
 # Ensure the CSV file 'MPPC_projects_1H2025_2025-08-06_map_source.csv' is available in the environment.
 try:
     # Using the exact filename provided by the user
-    df = pd.read_csv("MPPC_projects_1H2025_2025-08-06_map_source.csv")
+    df = pd.read_csv("PAPTC_projects_1H_2025_cleaned_geocoded_streamlit_map_ready.csv")
 except FileNotFoundError:
-    st.error("Error: The CSV file 'MPPC_projects_1H2025_2025-08-06_map_source.csv' was not found.")
+    st.error("Error: The CSV file 'PAPTC_projects_1H_2025_cleaned_geocoded_streamlit_map_ready.csv' was not found.")
     st.stop()
 
 # --- Data Preprocessing and Handling Missing Values ---
@@ -75,22 +75,22 @@ df.dropna(subset=['latitude', 'longitude'], inplace=True)
 if len(df) < initial_rows:
     st.warning(f"Removed {initial_rows - len(df)} rows due to missing Latitude or Longitude data.")
 
-# Further filter to ensure only Menlo Park projects are shown (if 'City' column exists and is needed)
+# Further filter to ensure only Palo Alto projects are shown (if 'City' column exists and is needed)
 if 'city' in df.columns:
-    df = df[df['city'].astype(str).str.contains('Menlo Park', case=False, na=False)]
+    df = df[df['city'].astype(str).str.contains('Palo Alto', case=False, na=False)]
     if df.empty:
-        st.warning("No projects found for Menlo Park after filtering.")
+        st.warning("No projects found for Palo Alto after filtering.")
         st.stop()
 else:
     st.warning("The 'City' column was not found in the CSV. Displaying all projects with valid coordinates.")
 
-# Center the map around Menlo Park, CA
-# Using the mean of the available Menlo Park coordinates for a more accurate center
+# Center the map around Palo Alto, CA
+# Using the mean of the available Palo Alto coordinates for a more accurate center
 if not df.empty:
     map_center = [df['latitude'].mean(), df['longitude'].mean()]
 else:
-    # Fallback to a default Menlo Park center if no valid data points
-    map_center = [37.4525, -122.1768] # Burgess Park location
+    # Fallback to a default Palo Alto center if no valid data points
+    map_center = [37.440848, -122.156314] # Professorville, Palo Alto, CA
 
 # Create a Folium map object
 map_height = 800  # Set the height of the map
