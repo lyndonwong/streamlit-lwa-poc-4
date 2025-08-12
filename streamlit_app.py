@@ -191,7 +191,14 @@ st.markdown("""
 # Paragraph overview
 st.markdown('''
             ##### Overview of Commission meetings 1H 2025: 
-            Key discussions during this 6 month period from January through June include the **2045 General Plan Reset**, a comprehensive update addressing housing projections, land use designations, and environmental impacts like air quality and transportation. The **Pulgus Creek Watershed Plan** is also presented, outlining strategies for flood protection, sea level rise, groundwater management, and community education on watershed preservation. Additionally, the **Northeast Area Specific Plan** is explored, detailing a 20-year framework for guiding development, improving connectivity, addressing environmental resilience, and managing parking within a 145-acre district. Finally, the **Downtown Streetscape Master Plan** and **Transportation Demand Management Plan** are presented, aiming to enhance the pedestrian experience, balance transportation modes, and implement sustainable parking strategies, alongside a discussion of objective design standards for new multi-family and mixed-use developments and the **Alexandria Life Science Research and Development Campus** project.     
+Palo Alto's Planning & Transportation Commission (PTC) focused in 1H 2025 on a range of urban planning and infrastructure topics, including:
+
++ the redevelopment of opportunity sites for housing and retail
++ addressing parking concerns with new systems and policies
++ updating the bicycle and pedestrian transportation plan
++ and reviewing conditional use permits for specific projects. 
+
+The meetings highlight the PTC's role in making recommendations to the City Council on issues such as affordable housing requirements, traffic safety initiatives, and the future development of key areas like Cubberly and El Camino Real, often involving extensive public and staff input and complex legal and policy considerations.
             ''')
 
 st.subheader("Table of Key Projects")
