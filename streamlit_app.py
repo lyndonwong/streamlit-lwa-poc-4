@@ -9,6 +9,8 @@ from streamlit_folium import st_folium
 import io
 # add video stream support
 from streamlit_player import st_player
+# add altair charting
+import altair as alt
 
 # DEPRECATE for this test
 # # Bypass streamlit_folium component, which has bug that causes empty space at bottom of map
@@ -205,14 +207,37 @@ st.subheader("Table of Key Projects")
 st.dataframe(df)
 
 # Meeting Metrics for 1H 2025
-st.subheader("Meeting Duration by Date")
+st.subheader("Highlights by Meeting Date")
 chart_df = pd.read_csv('PAPTC-meeting-metrics_1H2025.csv')
 chart_df["Date"] = pd.to_datetime(chart_df["date"])
 chart_df["Duration"] = pd.to_numeric(chart_df["duration"], errors='coerce')
-st.bar_chart(chart_df, x="date", y="duration", use_container_width=True) 
+chart_df["Topic Count"] = chart_df["topics-discussed"]
+chart_df["Topic List"] = chart_df["topics-list"]
+chart_df["Youtube link"] = chart_df["youtube-link"]
 
-st.subheader("Meeting Metrics by Date")
-st.dataframe(chart_df)
+# DEPRECATED simple streamlit bar chart since this does not support clickable link
+# # basic streamlit bar_chart
+# st.bar_chart(chart_df, x="date", y="duration", use_container_width=True) 
+
+# ADDED enhanced altair interactive chart
+mtg_chart = alt.Chart(chart_df).mark_bar().encode(
+    x='date',
+    y= 'duration',
+    href='youtube-link',
+    tooltip=['Date', 'Duration', 'Topic Count', 'Topic List', 'Youtube link']
+).properties(title="Click any meeting bar to see Youtube video source")
+
+st.altair_chart(mtg_chart, use_container_width=True)
+
+# Meeting Highlights table
+st.subheader("Meeting Highlights")
+
+# List of columns you want to display
+selected_columns = ['Date', 'Duration', 'Topic Count', 'Topic List', 'Youtube link']
+# Create a new DataFrame with only the selected columns
+df_to_display = chart_df[selected_columns]
+
+st.dataframe(df_to_display)
 
 # Planning Commission detailed activity highlights
 st.subheader("Fine Print")
@@ -228,4 +253,3 @@ markdown_content = read_markdown_file("SCPT_1H2025_Milestones.md")
 # Display the markdown content in Streamlit, with user control to show/hide
 if st.checkbox("See Planning Commission 1H 2025 Activity Details"):
     st.markdown(markdown_content)
-
