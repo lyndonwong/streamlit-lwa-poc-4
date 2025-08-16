@@ -203,8 +203,15 @@ Palo Alto's Planning & Transportation Commission (PTC) focused in 1H 2025 on a r
 The meetings highlight the PTC's role in making recommendations to the City Council on issues such as affordable housing requirements, traffic safety initiatives, and the future development of key areas like Cubberly and El Camino Real, often involving extensive public and staff input and complex legal and policy considerations.
             ''')
 
+# Show table of Key Projects
 st.subheader("Table of Key Projects")
-st.dataframe(df)
+
+#columns_to_show = ['Project', 'Address', 'Description', 'First Mention', 'Last Mention']
+columns_to_show = ['name', 'address', 'description', 'earliest_mention_date', 'latest_mention_date']
+
+# st.dataframe(df) # DEPRECATED 2025-08-16
+# use st.table instead, to show multi-row description field
+st.table(df[columns_to_show])
 
 # Meeting Metrics for 1H 2025
 st.subheader("Highlights by Meeting Date")
@@ -237,7 +244,11 @@ selected_columns = ['Date', 'Duration', 'Topic Count', 'Topic List', 'Youtube li
 # Create a new DataFrame with only the selected columns
 df_to_display = chart_df[selected_columns]
 
-st.dataframe(df_to_display)
+# DEPRECATED 2025-08-16
+# st.dataframe(df_to_display) 
+
+# use st.table instead, to render markdown in table cells
+st.table(df_to_display)
 
 # Planning Commission detailed activity highlights
 st.subheader("Fine Print")
