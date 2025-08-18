@@ -47,9 +47,9 @@ st.write("Hover over the pins to see detailed project information. Click on a pi
 # Ensure the CSV file 'MPPC_projects_1H2025_2025-08-06_map_source.csv' is available in the environment.
 try:
     # Using the exact filename provided by the user
-    df = pd.read_csv("PAPTC_projects_1H2025_map_table.csv")
+    df = pd.read_csv("PAPTC_projects_1H2025_map_table_v2.csv")
 except FileNotFoundError:
-    st.error("Error: The CSV file 'PAPTC_projects_1H2025_map_table.csv' was not found.")
+    st.error("Error: The CSV file 'PAPTC_projects_1H2025_map_table_v2.csv' was not found.")
     st.stop()
 
 # --- Data Preprocessing and Handling Missing Values ---
@@ -62,7 +62,7 @@ df.rename(columns={
     'Address': 'address',
     'City': 'city',
     'Description': 'description',
-    # 'Public URL': 'url', # 2025-08-06 DEPRECATE until CSV appended
+    'URL': 'url', # 2025-08-06 DEPRECATE until CSV appended
     'First Mention': 'earliest_mention_date', # Renamed
     'Last Mention': 'latest_mention_date'    # Renamed
 }, inplace=True)
@@ -207,7 +207,7 @@ The meetings highlight the PTC's role in making recommendations to the City Coun
 st.subheader("Table of Key Projects")
 
 #columns_to_show = ['Project', 'Address', 'Description', 'First Mention', 'Last Mention']
-columns_to_show = ['name', 'address', 'description', 'earliest_mention_date', 'latest_mention_date']
+columns_to_show = ['name', 'address', 'description', 'earliest_mention_date', 'latest_mention_date', 'url']
 
 # st.dataframe(df) # DEPRECATED 2025-08-16
 # use st.table instead, to show multi-row description field
