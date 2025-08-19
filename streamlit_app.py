@@ -251,8 +251,33 @@ st.table(df_to_display)
 
 # Commissioners policy stances table
 st.subheader("Key Stances by Commissioner")
-stances_df = pd.read_csv('PAPTC-commissioner-stances_2025-08-18_v3.csv')
-st.table(stances_df)
+stances_df = pd.read_csv('PAPTC-commissioner-stances_2025-08-19_v3.csv')
+
+# display subset of columns using st.table for bulleted list in cells
+positions_view = ['Commissioner name', 'Positions']
+positions_list_df = stances_df[positions_view]
+st.table(positions_list_df)
+
+# display stances columns using st.dataframe for horizontal scrolling
+stances_summary_df = stances_df.drop(columns=['Positions'])
+# add color-coding on stances (pro, neutral, opposed or mixed)
+def highlight_stances(val):
+    color= 'white'
+    if val == 'Pro':
+        color = '#70FA97'
+    elif val == 'Mixed':
+        color = '#B1EAF0'
+    elif val == 'Neutral':
+        color = '#E5FAA0'
+    elif val == 'Opposed':
+        color = '#FFDC78'
+    return f'background-color: {color}'
+styled_stances_df = stances_summary_df.style.applymap(highlight_stances)
+st.dataframe(styled_stances_df)
+
+# DEPRECATED - replaced by above 2 separate tables
+# display all columns using st.dataframe for horizontal scrolling
+# st.dataframe(stances_df)
 
 # Planning Commission detailed activity highlights
 st.subheader("Fine Print")
