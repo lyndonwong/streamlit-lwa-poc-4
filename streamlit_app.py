@@ -246,9 +246,13 @@ df_to_display = chart_df[selected_columns]
 
 # DEPRECATED 2025-08-16
 # st.dataframe(df_to_display) 
-
 # use st.table instead, to render markdown in table cells
 st.table(df_to_display)
+
+# Commissioners policy stances table
+st.subheader("Key Stances by Commissioner")
+stances_df = pd.read_csv('PAPTC-commissioner-stances_2025-08-18_v3.csv')
+st.table(stances_df)
 
 # Planning Commission detailed activity highlights
 st.subheader("Fine Print")
