@@ -261,17 +261,34 @@ st.table(positions_list_df)
 # display stances columns using st.dataframe for horizontal scrolling
 stances_summary_df = stances_df.drop(columns=['Positions'])
 # add color-coding on stances (pro, neutral, opposed or mixed)
+
+# DEPRECATED v1 palette
+# def highlight_stances(val):
+#     color= 'white'
+#     if val == 'Pro':
+#         color = '#70FA97'
+#     elif val == 'Mixed':
+#         color = '#B1EAF0'
+#     elif val == 'Neutral':
+#         color = '#E5FAA0'
+#     elif val == 'Opposed':
+#         color = '#FFDC78'
+#     return f'background-color: {color}'
+
+# v2 palette per ChatGPT suggestions 2025-08-20
+
 def highlight_stances(val):
     color= 'white'
     if val == 'Pro':
-        color = '#70FA97'
+        color = '#D5F5E3'
     elif val == 'Mixed':
-        color = '#B1EAF0'
+        color = '#F9E79F'
     elif val == 'Neutral':
-        color = '#E5FAA0'
+        color = '#D6EAF8'
     elif val == 'Opposed':
-        color = '#FFDC78'
+        color = '#FAD7A0'
     return f'background-color: {color}'
+
 styled_stances_df = stances_summary_df.style.applymap(highlight_stances)
 st.dataframe(styled_stances_df)
 
