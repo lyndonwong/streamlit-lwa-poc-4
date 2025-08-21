@@ -19,29 +19,41 @@ import altair as alt
 st.set_page_config(layout="wide")
 st.logo("LWA-v2-square.png", size="large")    
 st.image("LWA-demo-lab-bar.png", use_container_width=True )
-st.title("Your Tracker: Palo Alto Planning Commission")
+st.title("Look Now: The Palo Alto Planning Commission")
 
-# Explainer video
-st.subheader("The Explainer")
-st.write("Your 7 minute video on Palo Alto's real estate investment climate in mid 2025.")
-st_player("https://player.vimeo.com/video/1109170740")
+# SUMMARY VISUALIZATIONS ON TOPICS, PROJECTS, COMMISSIONERS
 
-# DEPRECATED 8/8/2025
-# Somewhat redundant with explainer video. Also a big in the audio file prevents playback
-# # Podcast player
-# st.subheader("Deep Dive - July 2025 Podcast")
-# st.write("Your 5 minute podcast on the big themes and impacts of Menlo Park planning commission actions in 1H 2025")
-# try:
-#     with open("MPPC_podcast_source.m4a", "rb") as audio_file:
-#         audio_bytes = audio_file.read()
-#     st.audio(audio_bytes, format="audio/m4a")
-# except FileNotFoundError:
-#     st.error("Error: The audio file 'MPPC_podcast_source.m4a' was not found. Please ensure the file is in the correct directory.")  
+# BAR CHART WITH Meeting Highlights for 1H 2025
+st.subheader("Meeting Highlights by Date", anchor="meeting-highlights")
 
+chart_df = pd.read_csv('PAPTC-meeting-metrics_1H2025.csv')
+chart_df["Date"] = pd.to_datetime(chart_df["date"])
+chart_df["Duration"] = pd.to_numeric(chart_df["duration"], errors='coerce')
+chart_df["Topic Count"] = chart_df["topics-discussed"]
+chart_df["Topic List"] = chart_df["topics-list"]
+chart_df["Youtube link"] = chart_df["youtube-link"]
 
-# Add interactive map of projects presented to the Planning Commmission
-st.subheader("Key Projects Map")
+# DEPRECATED simple streamlit bar chart since this does not support clickable link
+# # basic streamlit bar_chart
+# st.bar_chart(chart_df, x="date", y="duration", use_container_width=True) 
+
+# ADDED enhanced altair interactive chart
+mtg_chart = alt.Chart(chart_df).mark_bar().encode(
+    x='date',
+    y= 'duration',
+    color=alt.value('#A9CCE3'),
+    # href='youtube-link',  DEPRECATED for ux reasons
+    tooltip=['Date', 'Duration', 'Topic Count', 'Topic List'] # removed "'Youtube link' from list"
+).properties(title="Rollover any bar for meeting highlights")
+
+st.altair_chart(mtg_chart, use_container_width=True)
+
+st.markdown("[CLICK HERE for Meeting Details](#meeting-details)")
+
+# INTERACTIVE MAP of projects presented to the Planning Commmission
+st.subheader("Project Map", anchor="project-map")
 st.write("Hover over the pins to see detailed project information. Click on a pin for a popup and to see the project name below.")
+st.markdown("[CLICK HERE FOR DETAILS on each project](#project-details)")
 
 # Load the data from the uploaded CSV file
 # Ensure the CSV file 'MPPC_projects_1H2025_2025-08-06_map_source.csv' is available in the environment.
@@ -188,76 +200,16 @@ st.markdown("""
 - **Click** on a pin to see `popup` with more details, including a public URL link when available.
 - Rows with missing Latitude or Longitude values are automatically excluded from the map.
 - If a Public URL or Date information is missing or 'N/A', the relevant field will indicate that.
+- [CLICK HERE FOR DETAILS on each project](#project-details)        
 """)
 
-# Paragraph overview
-st.markdown('''
-            ##### Overview of Commission meetings 1H 2025: 
-Palo Alto's Planning & Transportation Commission (PTC) focused in 1H 2025 on a range of urban planning and infrastructure topics, including:
-
-+ the redevelopment of opportunity sites for housing and retail
-+ addressing parking concerns with new systems and policies
-+ updating the bicycle and pedestrian transportation plan
-+ and reviewing conditional use permits for specific projects. 
-
-The meetings highlight the PTC's role in making recommendations to the City Council on issues such as affordable housing requirements, traffic safety initiatives, and the future development of key areas like Cubberly and El Camino Real, often involving extensive public and staff input and complex legal and policy considerations.
-            ''')
-
-# Show table of Key Projects
-st.subheader("Table of Key Projects")
-
-#columns_to_show = ['Project', 'Address', 'Description', 'First Mention', 'Last Mention']
-columns_to_show = ['name', 'address', 'description', 'earliest_mention_date', 'latest_mention_date', 'url']
-
-# st.dataframe(df) # DEPRECATED 2025-08-16
-# use st.table instead, to show multi-row description field
-st.table(df[columns_to_show])
-
-# Meeting Metrics for 1H 2025
-st.subheader("Highlights by Meeting Date")
-chart_df = pd.read_csv('PAPTC-meeting-metrics_1H2025.csv')
-chart_df["Date"] = pd.to_datetime(chart_df["date"])
-chart_df["Duration"] = pd.to_numeric(chart_df["duration"], errors='coerce')
-chart_df["Topic Count"] = chart_df["topics-discussed"]
-chart_df["Topic List"] = chart_df["topics-list"]
-chart_df["Youtube link"] = chart_df["youtube-link"]
-
-# DEPRECATED simple streamlit bar chart since this does not support clickable link
-# # basic streamlit bar_chart
-# st.bar_chart(chart_df, x="date", y="duration", use_container_width=True) 
-
-# ADDED enhanced altair interactive chart
-mtg_chart = alt.Chart(chart_df).mark_bar().encode(
-    x='date',
-    y= 'duration',
-    href='youtube-link',
-    tooltip=['Date', 'Duration', 'Topic Count', 'Topic List', 'Youtube link']
-).properties(title="Click any meeting bar to see Youtube video source")
-
-st.altair_chart(mtg_chart, use_container_width=True)
-
-# Meeting Highlights table
-st.subheader("Meeting Highlights")
-
-# List of columns you want to display
-selected_columns = ['Date', 'Duration', 'Topic Count', 'Topic List', 'Youtube link']
-# Create a new DataFrame with only the selected columns
-df_to_display = chart_df[selected_columns]
-
-# DEPRECATED 2025-08-16
-# st.dataframe(df_to_display) 
-# use st.table instead, to render markdown in table cells
-st.table(df_to_display)
-
-# Commissioners policy stances table
-st.subheader("Key Stances by Commissioner")
+# COMMISSIONER STANCES AND POSITIONS
+# Commissioners policy stances data frame
 stances_df = pd.read_csv('PAPTC-commissioner-stances_2025-08-19_v3.csv')
 
-# display subset of columns using st.table for bulleted list in cells
-positions_view = ['Commissioner name', 'Positions']
-positions_list_df = stances_df[positions_view]
-st.table(positions_list_df)
-
+# Commissioner Stances heatgrid
+st.subheader("Commissioner Stances at a glance", anchor="commissioner-stances-heatgrid")
+st.markdown("[CLICK HERE for Commissioners' Specific Positions](#commissioner-specific-positions)")
 # display stances columns using st.dataframe for horizontal scrolling
 stances_summary_df = stances_df.drop(columns=['Positions'])
 # add color-coding on stances (pro, neutral, opposed or mixed)
@@ -291,6 +243,74 @@ def highlight_stances(val):
 
 styled_stances_df = stances_summary_df.style.applymap(highlight_stances)
 st.dataframe(styled_stances_df)
+
+# ANALYSES FROM VARIOUS PERSPECTIVES
+st.header("Interpretations")
+
+# Explainer video
+st.subheader("The Explainer")
+st.write("Your 7 minute video on Palo Alto's real estate investment climate in mid 2025.")
+st_player("https://player.vimeo.com/video/1109170740")
+
+# DEPRECATED 8/8/2025
+# Somewhat redundant with explainer video. Also a big in the audio file prevents playback
+# # Podcast player
+# st.subheader("Deep Dive - July 2025 Podcast")
+# st.write("Your 5 minute podcast on the big themes and impacts of Menlo Park planning commission actions in 1H 2025")
+# try:
+#     with open("MPPC_podcast_source.m4a", "rb") as audio_file:
+#         audio_bytes = audio_file.read()
+#     st.audio(audio_bytes, format="audio/m4a")
+# except FileNotFoundError:
+#     st.error("Error: The audio file 'MPPC_podcast_source.m4a' was not found. Please ensure the file is in the correct directory.")  
+
+# Paragraph overview
+st.markdown('''
+            ##### Overview of Commission meetings 1H 2025: 
+Palo Alto's Planning & Transportation Commission (PTC) focused in 1H 2025 on a range of urban planning and infrastructure topics, including:
+
++ the redevelopment of opportunity sites for housing and retail
++ addressing parking concerns with new systems and policies
++ updating the bicycle and pedestrian transportation plan
++ and reviewing conditional use permits for specific projects. 
+
+The meetings highlight the PTC's role in making recommendations to the City Council on issues such as affordable housing requirements, traffic safety initiatives, and the future development of key areas like Cubberly and El Camino Real, often involving extensive public and staff input and complex legal and policy considerations.
+            ''')
+
+# INFORMATION TABLES WITH MORE DETAILS ON TOPICS, PROJECTS AND COMMISSIONERS
+
+# Meeting Details table
+st.subheader("Meeting Details", anchor="meeting-details")
+st.markdown("[CLICK HERE for Meeting Highlights](#meeting-highlights)")
+
+# List of columns you want to display
+selected_columns = ['Date', 'Duration', 'Topic Count', 'Topic List', 'Youtube link']
+# Create a new DataFrame with only the selected columns
+df_to_display = chart_df[selected_columns]
+
+# DEPRECATED 2025-08-16
+# st.dataframe(df_to_display) 
+# use st.table instead, to render markdown in table cells
+st.table(df_to_display)
+
+# Show table of Key Projects
+st.subheader("Project Details", anchor="project-details")
+st.markdown("[CLICK HERE for Project Map](#project-map)")
+
+#columns_to_show = ['Project', 'Address', 'Description', 'First Mention', 'Last Mention']
+columns_to_show = ['name', 'address', 'description', 'earliest_mention_date', 'latest_mention_date', 'url']
+
+# st.dataframe(df) # DEPRECATED 2025-08-16
+# use st.table instead, to show multi-row description field
+st.table(df[columns_to_show])
+
+# COMMISSIONER SPECIFIC POSITIONS
+# display subset of columns using st.table for bulleted list in cells
+st.subheader("Specific Positions by Commissioner", anchor="commissioner-specific-positions")
+st.markdown("[CLICK HERE for Commissioner Stances at a glance](#commissioner-stances-heatgrid)")
+positions_view = ['Commissioner name', 'Positions']
+positions_list_df = stances_df[positions_view]
+st.table(positions_list_df)
 
 # DEPRECATED - replaced by above 2 separate tables
 # display all columns using st.dataframe for horizontal scrolling
