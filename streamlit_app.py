@@ -24,7 +24,7 @@ st.title("Look Now: The Palo Alto Planning Commission")
 # SUMMARY VISUALIZATIONS ON TOPICS, PROJECTS, COMMISSIONERS
 
 # BAR CHART WITH Meeting Highlights for 1H 2025
-st.subheader("Meeting Highlights by Date", anchor="meeting-highlights")
+st.subheader("Meeting Highlights", anchor="meeting-highlights")
 
 chart_df = pd.read_csv('PAPTC-meeting-metrics_1H2025.csv')
 chart_df["Date"] = pd.to_datetime(chart_df["date"])
@@ -44,7 +44,7 @@ mtg_chart = alt.Chart(chart_df).mark_bar().encode(
     color=alt.value('#A9CCE3'),
     # href='youtube-link',  DEPRECATED for ux reasons
     tooltip=['Date', 'Duration', 'Topic Count', 'Topic List'] # removed "'Youtube link' from list"
-).properties(title="Rollover any bar for meeting highlights")
+).properties(title="Rollover any bar for meeting highlights by date")
 
 st.altair_chart(mtg_chart, use_container_width=True)
 
@@ -208,7 +208,7 @@ st.markdown("""
 stances_df = pd.read_csv('PAPTC-commissioner-stances_2025-08-19_v3.csv')
 
 # Commissioner Stances heatgrid
-st.subheader("Commissioner Stances at a glance", anchor="commissioner-stances-heatgrid")
+st.subheader("Commissioner Stances", anchor="commissioner-stances-heatgrid")
 st.markdown("[CLICK HERE for Commissioners' Specific Positions](#commissioner-specific-positions)")
 # display stances columns using st.dataframe for horizontal scrolling
 stances_summary_df = stances_df.drop(columns=['Positions'])
@@ -306,7 +306,7 @@ st.table(df[columns_to_show])
 
 # COMMISSIONER SPECIFIC POSITIONS
 # display subset of columns using st.table for bulleted list in cells
-st.subheader("Specific Positions by Commissioner", anchor="commissioner-specific-positions")
+st.subheader("Commissioner Specific Positions", anchor="commissioner-specific-positions")
 st.markdown("[CLICK HERE for Commissioner Stances at a glance](#commissioner-stances-heatgrid)")
 positions_view = ['Commissioner name', 'Positions']
 positions_list_df = stances_df[positions_view]
