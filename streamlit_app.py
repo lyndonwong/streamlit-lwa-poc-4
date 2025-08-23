@@ -247,10 +247,26 @@ st.dataframe(styled_stances_df)
 # ANALYSES FROM VARIOUS PERSPECTIVES
 st.header("Interpretations")
 
-# Explainer video
-st.subheader("The Explainer")
-st.write("Your 7 minute video on Palo Alto's real estate investment climate in mid 2025.")
-st_player("https://player.vimeo.com/video/1109170740")
+# # Explainer video
+# st.subheader("The Explainer")
+# st.write("Your 7 minute video on Palo Alto's real estate investment climate in mid 2025.")
+# st_player("https://player.vimeo.com/video/1109170740")
+
+
+# Select explainers via tabs
+tab_renters, tab_investors = st.tabs(["For Renters", "For Investors"])
+
+with tab_renters:
+    st.subheader("For Renters")
+    st.write("A 7-minute video on how 1H 2025 Planning Commission activity may affect renters.")
+    st_player("https://player.vimeo.com/video/1112355201")
+
+with tab_investors:
+    st.subheader("For Investors")
+    st.write("A 7-minute video on how 1H 2025 Planning Commission activity may affect investors.")
+    st_player("https://player.vimeo.com/video/1112375299")
+
+
 
 # DEPRECATED 8/8/2025
 # Somewhat redundant with explainer video. Also a big in the audio file prevents playback
