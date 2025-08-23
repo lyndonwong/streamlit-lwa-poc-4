@@ -207,6 +207,16 @@ st.markdown("""
 # Commissioners policy stances data frame
 stances_df = pd.read_csv('PAPTC-commissioner-stances_2025-08-19_v3.csv')
 
+# --- Add this CSS style block to force text color to black ---
+st.markdown("""
+<style>
+    .stDataFrame .css-1qf2o1z p {
+        color: #333333 !important; /* A dark gray is often easier on the eyes than pure black */
+    }
+</style>
+""", unsafe_allow_html=True)
+# --- End of CSS block ---
+
 # Commissioner Stances heatgrid
 st.subheader("Commissioner Stances", anchor="commissioner-stances-heatgrid")
 st.markdown("[CLICK HERE for Commissioners' Specific Positions](#commissioner-specific-positions)")
