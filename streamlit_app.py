@@ -21,6 +21,23 @@ st.logo("LWA-v2-square.png", size="large")
 st.image("LWA-demo-lab-bar.png", use_container_width=True )
 st.title("Look Now: The Palo Alto Planning Commission")
 
+# decorative image of the town
+st.image("https://canopy.org/wp-content/uploads/Arial-View-of-Palo-Alto_header-image-.jpg", use_container_width=True)
+
+# Short overview
+# [2025-08-25] TO DO: should modify to scan external .md file for this content, instead of hardcoding
+st.markdown('''
+            ##### Overview of Commission meetings 1H 2025: 
+Palo Alto's Planning & Transportation Commission (PTC) focused in 1H 2025 on a range of urban planning and infrastructure topics, including:
+
++ the redevelopment of opportunity sites for housing and retail
++ addressing parking concerns with new systems and policies
++ updating the bicycle and pedestrian transportation plan
++ and reviewing conditional use permits for specific projects. 
+
+The meetings highlight the PTC's role in making recommendations to the City Council on issues such as affordable housing requirements, traffic safety initiatives, and the future development of key areas like Cubberly and El Camino Real, often involving extensive public and staff input and complex legal and policy considerations.
+            ''')
+
 # SUMMARY VISUALIZATIONS ON TOPICS, PROJECTS, COMMISSIONERS
 
 # BAR CHART WITH Meeting Highlights for 1H 2025
@@ -292,19 +309,6 @@ with tab_investors:
 # except FileNotFoundError:
 #     st.error("Error: The audio file 'MPPC_podcast_source.m4a' was not found. Please ensure the file is in the correct directory.")  
 
-# Paragraph overview
-st.markdown('''
-            ##### Overview of Commission meetings 1H 2025: 
-Palo Alto's Planning & Transportation Commission (PTC) focused in 1H 2025 on a range of urban planning and infrastructure topics, including:
-
-+ the redevelopment of opportunity sites for housing and retail
-+ addressing parking concerns with new systems and policies
-+ updating the bicycle and pedestrian transportation plan
-+ and reviewing conditional use permits for specific projects. 
-
-The meetings highlight the PTC's role in making recommendations to the City Council on issues such as affordable housing requirements, traffic safety initiatives, and the future development of key areas like Cubberly and El Camino Real, often involving extensive public and staff input and complex legal and policy considerations.
-            ''')
-
 # INFORMATION TABLES WITH MORE DETAILS ON TOPICS, PROJECTS AND COMMISSIONERS
 
 # Meeting Details table
@@ -344,17 +348,19 @@ st.table(positions_list_df)
 # display all columns using st.dataframe for horizontal scrolling
 # st.dataframe(stances_df)
 
-# Planning Commission detailed activity highlights
-st.subheader("Fine Print")
-st.write("Click the checkbox to dig deeper.")       
-# Get markdown content for the Planning Commission highlights
-def read_markdown_file(file_path):
-    """Reads the content of a markdown file."""
-    with open(file_path, "r", encoding="utf-8") as file:
-        return file.read()
 
-markdown_content = read_markdown_file("SCPT_1H2025_Milestones.md")
+# # Planning Commission detailed activity highlights
+# DEPRECATED tbd if useful to retain a long-form bullet point narrative summary
+# st.subheader("Fine Print")
+# st.write("Click the checkbox to dig deeper.")       
+# # Get markdown content for the Planning Commission highlights
+# def read_markdown_file(file_path):
+#     """Reads the content of a markdown file."""
+#     with open(file_path, "r", encoding="utf-8") as file:
+#         return file.read()
 
-# Display the markdown content in Streamlit, with user control to show/hide
-if st.checkbox("See Planning Commission 1H 2025 Activity Details"):
-    st.markdown(markdown_content)
+# markdown_content = read_markdown_file("SCPT_1H2025_Milestones.md")
+
+# # Display the markdown content in Streamlit, with user control to show/hide
+# if st.checkbox("See Planning Commission 1H 2025 Activity Details"):
+#     st.markdown(markdown_content)
