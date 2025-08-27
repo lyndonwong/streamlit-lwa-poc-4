@@ -237,6 +237,10 @@ st.markdown("""
 # Commissioner Stances heatgrid
 st.subheader("Commissioner Stances", anchor="commissioner-stances-heatgrid")
 st.markdown("[CLICK HERE for Commissioners' Specific Positions](#commissioner-specific-positions)")
+
+# Detect current theme: "light" or "dark"
+theme_type = st.context.theme.type
+
 # display stances columns using st.dataframe for horizontal scrolling
 stances_summary_df = stances_df.drop(columns=['Positions'])
 # add color-coding on stances (pro, neutral, opposed or mixed)
@@ -256,17 +260,40 @@ stances_summary_df = stances_df.drop(columns=['Positions'])
 
 # v2 palette per ChatGPT suggestions 2025-08-20
 
+# def highlight_stances(val):
+#     color= 'white'
+#     if val == 'Pro':
+#         color = '#D5F5E3'
+#     elif val == 'Mixed':
+#         color = '#F9E79F'
+#     elif val == 'Neutral':
+#         color = '#D6EAF8'
+#     elif val == 'Opposed':
+#         color = '#FAD7A0'
+#     return f'background-color: {color}'
+
+# Enable responsive highlight colors for light or dark screen mode.
+
 def highlight_stances(val):
-    color= 'white'
-    if val == 'Pro':
-        color = '#D5F5E3'
-    elif val == 'Mixed':
-        color = '#F9E79F'
-    elif val == 'Neutral':
-        color = '#D6EAF8'
-    elif val == 'Opposed':
-        color = '#FAD7A0'
-    return f'background-color: {color}'
+    if theme_type == "dark":
+        if val == 'Pro':
+            return 'background-color: #27AE60; color: white;'   # darker green
+        elif val == 'Mixed':
+            return 'background-color: #B7950B; color: white;'   # olive
+        elif val == 'Neutral':
+            return 'background-color: #2874A6; color: white;'   # medium blue
+        elif val == 'Opposed':
+            return 'background-color: #CA6F1E; color: white;'   # dark orange
+    else:  # light mode
+        if val == 'Pro':
+            return 'background-color: #D5F5E3; color: black;'   # pastel green
+        elif val == 'Mixed':
+            return 'background-color: #F9E79F; color: black;'   # pastel yellow
+        elif val == 'Neutral':
+            return 'background-color: #D6EAF8; color: black;'   # pastel blue
+        elif val == 'Opposed':
+            return 'background-color: #FAD7A0; color: black;'   # pastel orange
+    return ''
 
 styled_stances_df = stances_summary_df.style.applymap(highlight_stances)
 st.dataframe(styled_stances_df)
