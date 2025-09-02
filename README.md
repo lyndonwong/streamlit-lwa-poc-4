@@ -2,6 +2,6 @@
 
 ### GOAL 
 
-Build a variant of my streamlit-lwa-poc-3 app to present Palo Alto planning commission data.
+Originally built to present Palo Alto planning commission data. Has most refined structure so far. Using as template for next town commission insights page.
 
 
