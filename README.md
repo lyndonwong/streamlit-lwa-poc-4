@@ -2,8 +2,6 @@
 
 This Streamlit application provides an interactive dashboard for exploring data related to the Palo Alto Planning & Transportation Commission (PTC). It's designed as a learning tool for those new to Python, data visualization, and the Streamlit framework, showcasing how to build a simple but powerful data application.
 
-![App Screenshot](LWA-demo-lab-bar.png)
-
 ## Overview
 
 The goal of this project is to make the activities of the Palo Alto Planning & Transportation Commission more transparent and understandable to the public. The app visualizes meeting data, project proposals, and commissioner stances, offering insights for homeowners, renters, and investors.
