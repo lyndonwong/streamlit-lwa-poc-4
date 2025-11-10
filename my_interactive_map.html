@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ad6aeae8e2138a983fafc36cc253327d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 800.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ad6aeae8e2138a983fafc36cc253327d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ad6aeae8e2138a983fafc36cc253327d = L.map(
+                "map_ad6aeae8e2138a983fafc36cc253327d",
+                {
+                    center: [37.431911862499994, -122.13759803750001],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+
+            
+
+        
+    
+            var tile_layer_b0edf4b4011bf54f238e44813b70b00d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b0edf4b4011bf54f238e44813b70b00d.addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var marker_216563559b65e03a6a3cf7f6c82095b6 = L.marker(
+                [37.420937, -122.137151],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_0cc14d0a7f8d2a9cdb6e94a8ab480d1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d3e7a9b4b8ef4711f0bf9435c3a2e20 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7a4c48e9f88de95a650adb333a7e2ff3 = $(`<div id="html_7a4c48e9f88de95a650adb333a7e2ff3" style="width: 100.0%; height: 100.0%;">     <b>3265 El Camino Real</b><br>     Planned Home Zone application for a 100% affordable, six-story, 55-unit multi-family rental development, prioritizing local educators. Includes 32 parking spaces and bike storage. Received approval from PTC and City Council.<br>     <b>Earliest Mention:</b> 1/15/2025<br>     <b>Latest Mention:</b> 2/12/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Current-Planning/Projects/3265-El-Camino' target='_blank'>More Information</a>     </div>`)[0];
+                popup_8d3e7a9b4b8ef4711f0bf9435c3a2e20.setContent(html_7a4c48e9f88de95a650adb333a7e2ff3);
+            
+        
+
+        marker_216563559b65e03a6a3cf7f6c82095b6.bindPopup(popup_8d3e7a9b4b8ef4711f0bf9435c3a2e20)
+        ;
+
+        
+    
+    
+            marker_216563559b65e03a6a3cf7f6c82095b6.bindTooltip(
+                `<div>
+                     
+    <h4>3265 El Camino Real</h4>
+    <b>Address:</b> 3265 El Camino Real<br>
+    <b>Earliest Mention:</b> 1/15/2025<br>
+    <b>Latest Mention:</b> 2/12/2025<br>
+    <b>Coordinates:</b> (37.4209, -122.1372)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_216563559b65e03a6a3cf7f6c82095b6.setIcon(icon_0cc14d0a7f8d2a9cdb6e94a8ab480d1b);
+            
+    
+            var marker_558bc69fb97526425f5afedab98e1643 = L.marker(
+                [37.444122, -122.149915],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_f21b455a02cdf1e4630da52dff9b9e37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad4b8a22101bde69b771422b1a444b4f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5253ad14a557503c4c0d2f1b8bb943b = $(`<div id="html_a5253ad14a557503c4c0d2f1b8bb943b" style="width: 100.0%; height: 100.0%;">     <b>Bird-friendly design ordinance</b><br>     Proposed ordinance related to bird-friendly design, mentioned as going to City Council.<br>     <b>Earliest Mention:</b> 1/15/2025<br>     <b>Latest Mention:</b> 1/15/2025<br>     <a href='https://www.cityofpaloalto.org/files/assets/public/v/1/agendas-minutes-reports/agendas-minutes/planning-and-transportation-commission/2024/ptc-8.14-dark-skies-bird-safety.pdf' target='_blank'>More Information</a>     </div>`)[0];
+                popup_ad4b8a22101bde69b771422b1a444b4f.setContent(html_a5253ad14a557503c4c0d2f1b8bb943b);
+            
+        
+
+        marker_558bc69fb97526425f5afedab98e1643.bindPopup(popup_ad4b8a22101bde69b771422b1a444b4f)
+        ;
+
+        
+    
+    
+            marker_558bc69fb97526425f5afedab98e1643.bindTooltip(
+                `<div>
+                     
+    <h4>Bird-friendly design ordinance</h4>
+    <b>Address:</b> nan<br>
+    <b>Earliest Mention:</b> 1/15/2025<br>
+    <b>Latest Mention:</b> 1/15/2025<br>
+    <b>Coordinates:</b> (37.4441, -122.1499)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_558bc69fb97526425f5afedab98e1643.setIcon(icon_f21b455a02cdf1e4630da52dff9b9e37);
+            
+    
+            var marker_d0e6eb746c79a5856060550f11293eeb = L.marker(
+                [37.444655, -122.162441],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_78fbb7996cc880bbf74ee434a62bc786 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f627d542482065807cee1458df8697e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f4648f35540ee352af0a30fa6b9e4cb6 = $(`<div id="html_f4648f35540ee352af0a30fa6b9e4cb6" style="width: 100.0%; height: 100.0%;">     <b>Parking Programs Update</b><br>     Regular updates on parking data, including University Avenue garage/lot occupancy, sales data, and RPP permit sales. Implementation of new permit management and citation vendor and APGS systems in large garages. Policy changes for RPP employee permits and low-income permits.<br>     <b>Earliest Mention:</b> 1/15/2025<br>     <b>Latest Mention:</b> 5/28/2025<br>     <a href='https://www.cityofepa.org/publicworks/page/residential-permit-parking-program' target='_blank'>More Information</a>     </div>`)[0];
+                popup_f627d542482065807cee1458df8697e5.setContent(html_f4648f35540ee352af0a30fa6b9e4cb6);
+            
+        
+
+        marker_d0e6eb746c79a5856060550f11293eeb.bindPopup(popup_f627d542482065807cee1458df8697e5)
+        ;
+
+        
+    
+    
+            marker_d0e6eb746c79a5856060550f11293eeb.bindTooltip(
+                `<div>
+                     
+    <h4>Parking Programs Update</h4>
+    <b>Address:</b> Downtown Palo Alto<br>
+    <b>Earliest Mention:</b> 1/15/2025<br>
+    <b>Latest Mention:</b> 5/28/2025<br>
+    <b>Coordinates:</b> (37.4447, -122.1624)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0e6eb746c79a5856060550f11293eeb.setIcon(icon_78fbb7996cc880bbf74ee434a62bc786);
+            
+    
+            var marker_8d9dd7b86df8fb58da18885f048eeead = L.marker(
+                [37.444122, -122.149915],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_cf9a0d718f0a5e1f973452d63dfee3e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73a534a47e04637e87f19414d0c8132f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_272669901bf3e7e0b4bf9cb7f580ef99 = $(`<div id="html_272669901bf3e7e0b4bf9cb7f580ef99" style="width: 100.0%; height: 100.0%;">     <b>Safe Streets for All Safety Action Plan</b><br>     Draft plan to improve road safety, aiming for zero KSI (killed or severely injured). Focuses on eligibility for state/federal grants, sustainability, and accommodating new residents from housing element. Approved by City Council on June 2nd.<br>     <b>Earliest Mention:</b> 1/29/2025<br>     <b>Latest Mention:</b> 7/30/2025<br>     <a href='https://www.paloalto.gov/Departments/Transportation/Transportation-Projects/Safety-Action-Plan' target='_blank'>More Information</a>     </div>`)[0];
+                popup_73a534a47e04637e87f19414d0c8132f.setContent(html_272669901bf3e7e0b4bf9cb7f580ef99);
+            
+        
+
+        marker_8d9dd7b86df8fb58da18885f048eeead.bindPopup(popup_73a534a47e04637e87f19414d0c8132f)
+        ;
+
+        
+    
+    
+            marker_8d9dd7b86df8fb58da18885f048eeead.bindTooltip(
+                `<div>
+                     
+    <h4>Safe Streets for All Safety Action Plan</h4>
+    <b>Address:</b> Citywide<br>
+    <b>Earliest Mention:</b> 1/29/2025<br>
+    <b>Latest Mention:</b> 7/30/2025<br>
+    <b>Coordinates:</b> (37.4441, -122.1499)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d9dd7b86df8fb58da18885f048eeead.setIcon(icon_cf9a0d718f0a5e1f973452d63dfee3e2);
+            
+    
+            var marker_39a707e2e4b03c12f1c053ee3aee76c4 = L.marker(
+                [37.444122, -122.149915],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_7ae6c5a9a831f9ecba81f100d09162ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16fac15d326e5580a61521f8a4defe7a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_512ad48db8900f00d7c63b91099c50c4 = $(`<div id="html_512ad48db8900f00d7c63b91099c50c4" style="width: 100.0%; height: 100.0%;">     <b>Stream Corridor Protection Ordinance Update</b><br>     Update to the ordinance related to stream corridors, with public discussion.<br>     <b>Earliest Mention:</b> 1/15/2025<br>     <b>Latest Mention:</b> 7/30/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Current-Planning/Ordinances-Maps-Guidelines-Standards/CreekStream-Corridor-Protection-Ordinance-Update' target='_blank'>More Information</a>     </div>`)[0];
+                popup_16fac15d326e5580a61521f8a4defe7a.setContent(html_512ad48db8900f00d7c63b91099c50c4);
+            
+        
+
+        marker_39a707e2e4b03c12f1c053ee3aee76c4.bindPopup(popup_16fac15d326e5580a61521f8a4defe7a)
+        ;
+
+        
+    
+    
+            marker_39a707e2e4b03c12f1c053ee3aee76c4.bindTooltip(
+                `<div>
+                     
+    <h4>Stream Corridor Protection Ordinance Update</h4>
+    <b>Address:</b> Citywide<br>
+    <b>Earliest Mention:</b> 1/15/2025<br>
+    <b>Latest Mention:</b> 7/30/2025<br>
+    <b>Coordinates:</b> (37.4441, -122.1499)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_39a707e2e4b03c12f1c053ee3aee76c4.setIcon(icon_7ae6c5a9a831f9ecba81f100d09162ed);
+            
+    
+            var marker_d4e8370c00954f3d0e47f31546f30a81 = L.marker(
+                [37.444122, -122.149915],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_2ad2db1c5f7cfc7b0feb2bc8485861dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b04d4a2b457e4d18927a094ff8a858c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b38c8f2fdcbe12b60cdd0e2c2f185827 = $(`<div id="html_b38c8f2fdcbe12b60cdd0e2c2f185827" style="width: 100.0%; height: 100.0%;">     <b>Via Palo Alto Link</b><br>     On-demand shared ride transit pilot program, discussion on funding (City, Stanford Research Park, grants), operational model, and data tracking for users (youth, senior, wheelchair, low-income discount).<br>     <b>Earliest Mention:</b> 1/29/2025<br>     <b>Latest Mention:</b> 1/29/2025<br>     <a href='https://www.paloalto.gov/Departments/Transportation/Palo-Alto-Link' target='_blank'>More Information</a>     </div>`)[0];
+                popup_0b04d4a2b457e4d18927a094ff8a858c.setContent(html_b38c8f2fdcbe12b60cdd0e2c2f185827);
+            
+        
+
+        marker_d4e8370c00954f3d0e47f31546f30a81.bindPopup(popup_0b04d4a2b457e4d18927a094ff8a858c)
+        ;
+
+        
+    
+    
+            marker_d4e8370c00954f3d0e47f31546f30a81.bindTooltip(
+                `<div>
+                     
+    <h4>Via Palo Alto Link</h4>
+    <b>Address:</b> Citywide<br>
+    <b>Earliest Mention:</b> 1/29/2025<br>
+    <b>Latest Mention:</b> 1/29/2025<br>
+    <b>Coordinates:</b> (37.4441, -122.1499)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d4e8370c00954f3d0e47f31546f30a81.setIcon(icon_2ad2db1c5f7cfc7b0feb2bc8485861dd);
+            
+    
+            var marker_3e4500e90325a6df0e532e7e1d949bff = L.marker(
+                [37.45429, -122.14312],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_3f264e0bbab57c45078040db7ca4d340 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb66f47ce597cccda7e635e36ec68e3a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e25dbc3b40796deb897572ed5b4c03fb = $(`<div id="html_e25dbc3b40796deb897572ed5b4c03fb" style="width: 100.0%; height: 100.0%;">     <b>Crescent Park Traffic Calming Project</b><br>     Permanent installation project with a traffic oval and bulbout. Previous discussions focused on design, traffic data, and accessibility concerns for residents. The five-way intersection oval design was approved, while the bulbout portion was continued and later postponed.<br>     <b>Earliest Mention:</b> 1/29/2025<br>     <b>Latest Mention:</b> 4/30/2025<br>     <a href='https://www.paloalto.gov/Departments/Transportation/Transportation-Projects/Crescent-Park-Traffic-Calming-Project' target='_blank'>More Information</a>     </div>`)[0];
+                popup_bb66f47ce597cccda7e635e36ec68e3a.setContent(html_e25dbc3b40796deb897572ed5b4c03fb);
+            
+        
+
+        marker_3e4500e90325a6df0e532e7e1d949bff.bindPopup(popup_bb66f47ce597cccda7e635e36ec68e3a)
+        ;
+
+        
+    
+    
+            marker_3e4500e90325a6df0e532e7e1d949bff.bindTooltip(
+                `<div>
+                     
+    <h4>Crescent Park Traffic Calming Project</h4>
+    <b>Address:</b> Center Dr & Hamilton Ave<br>
+    <b>Earliest Mention:</b> 1/29/2025<br>
+    <b>Latest Mention:</b> 4/30/2025<br>
+    <b>Coordinates:</b> (37.4543, -122.1431)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3e4500e90325a6df0e532e7e1d949bff.setIcon(icon_3f264e0bbab57c45078040db7ca4d340);
+            
+    
+            var marker_a18f09b056e75b17003ba62178ad0c00 = L.marker(
+                [37.431267, -122.140268],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_6c71c8674ac45e7a0be5e0780bc5bcbb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a726d6d18a61c688fae7fe14fb1d016 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb9591eacfa14505592b67315b921991 = $(`<div id="html_eb9591eacfa14505592b67315b921991" style="width: 100.0%; height: 100.0%;">     <b>California Avenue & Ramona Street Permanent Closure</b><br>     Reclassification of portions of California Avenue (between El Camino Real and Birch Street) as a Community Street and Ramona Street (between University and Hamilton) as a Pedestrian Street. Aims to enhance outdoor dining, retail, and economic vibrancy.<br>     <b>Earliest Mention:</b> 2/12/2025<br>     <b>Latest Mention:</b> 2/12/2025<br>     <a href='https://www.paloalto.gov/Departments/Transportation/Transportation-Projects/Car-Free-Streets-Cal-Ave.-Ramona-Street' target='_blank'>More Information</a>     </div>`)[0];
+                popup_3a726d6d18a61c688fae7fe14fb1d016.setContent(html_eb9591eacfa14505592b67315b921991);
+            
+        
+
+        marker_a18f09b056e75b17003ba62178ad0c00.bindPopup(popup_3a726d6d18a61c688fae7fe14fb1d016)
+        ;
+
+        
+    
+    
+            marker_a18f09b056e75b17003ba62178ad0c00.bindTooltip(
+                `<div>
+                     
+    <h4>California Avenue & Ramona Street Permanent Closure</h4>
+    <b>Address:</b> Portions of California Avenue and Ramona Street<br>
+    <b>Earliest Mention:</b> 2/12/2025<br>
+    <b>Latest Mention:</b> 2/12/2025<br>
+    <b>Coordinates:</b> (37.4313, -122.1403)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a18f09b056e75b17003ba62178ad0c00.setIcon(icon_6c71c8674ac45e7a0be5e0780bc5bcbb);
+            
+    
+            var marker_63d485ab15a2d8123165c6e7a3162b50 = L.marker(
+                [37.420881, -122.137308],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_8b2b5e08eb992fcdb0493655960a8058 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2bc19bbd8135c572592a822298053fea = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b45c5512a3b91675e8da1a18cbd10b74 = $(`<div id="html_b45c5512a3b91675e8da1a18cbd10b74" style="width: 100.0%; height: 100.0%;">     <b>El Camino Real Repaving and Bike Lane Project (Caltrans)</b><br>     Ongoing Caltrans project for repaving and adding bike lanes. Status updates include striping completion, quick curbs installation, no parking signage, and electrical signal detection.<br>     <b>Earliest Mention:</b> 2/12/2025<br>     <b>Latest Mention:</b> 7/9/2025<br>     <a href='https://dot.ca.gov/caltrans-near-me/district-4/d4-projects/d4-santa-clara-sr82-pavement-rehabilitation-and-ada-improvements' target='_blank'>More Information</a>     </div>`)[0];
+                popup_2bc19bbd8135c572592a822298053fea.setContent(html_b45c5512a3b91675e8da1a18cbd10b74);
+            
+        
+
+        marker_63d485ab15a2d8123165c6e7a3162b50.bindPopup(popup_2bc19bbd8135c572592a822298053fea)
+        ;
+
+        
+    
+    
+            marker_63d485ab15a2d8123165c6e7a3162b50.bindTooltip(
+                `<div>
+                     
+    <h4>El Camino Real Repaving and Bike Lane Project (Caltrans)</h4>
+    <b>Address:</b> El Camino Real<br>
+    <b>Earliest Mention:</b> 2/12/2025<br>
+    <b>Latest Mention:</b> 7/9/2025<br>
+    <b>Coordinates:</b> (37.4209, -122.1373)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_63d485ab15a2d8123165c6e7a3162b50.setIcon(icon_8b2b5e08eb992fcdb0493655960a8058);
+            
+    
+            var marker_2db635ea130dc8be6529b020761393d5 = L.marker(
+                [37.405095, -122.118043],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_d73c42eebef2687fda813522788b5bfc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5513287fff0bdce678ebb4e9ef2e220 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff87588403abab24840c38bd03fe6300 = $(`<div id="html_ff87588403abab24840c38bd03fe6300" style="width: 100.0%; height: 100.0%;">     <b>4335 & 4345 El Camino Real</b><br>     Vesting tentative map for condominium subdivision to create 29 new townhome-style units. Includes affordable housing (4 on-site moderate-income units plus in-lieu fee) and energy efficiency features. Approved by PTC and City Council.<br>     <b>Earliest Mention:</b> 2/12/2025<br>     <b>Latest Mention:</b> 3/26/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Current-Planning/Projects/4335-4345-El-Camino-Real' target='_blank'>More Information</a>     </div>`)[0];
+                popup_e5513287fff0bdce678ebb4e9ef2e220.setContent(html_ff87588403abab24840c38bd03fe6300);
+            
+        
+
+        marker_2db635ea130dc8be6529b020761393d5.bindPopup(popup_e5513287fff0bdce678ebb4e9ef2e220)
+        ;
+
+        
+    
+    
+            marker_2db635ea130dc8be6529b020761393d5.bindTooltip(
+                `<div>
+                     
+    <h4>4335 & 4345 El Camino Real</h4>
+    <b>Address:</b> 4335 and 4345 El Camino Real<br>
+    <b>Earliest Mention:</b> 2/12/2025<br>
+    <b>Latest Mention:</b> 3/26/2025<br>
+    <b>Coordinates:</b> (37.4051, -122.1180)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2db635ea130dc8be6529b020761393d5.setIcon(icon_d73c42eebef2687fda813522788b5bfc);
+            
+    
+            var marker_425b3740d60b1f592a0fbf21a8295e59 = L.marker(
+                [37.444122, -122.149915],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_bfc8a6552eb645cc23b64a3f57111008 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b9210fa5a1ee494c36c4151c1bc0f5f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2b42b1f50d5cdd0fb5605b59a7cb6932 = $(`<div id="html_2b42b1f50d5cdd0fb5605b59a7cb6932" style="width: 100.0%; height: 100.0%;">     <b>Bicycle and Pedestrian Transportation Plan Update</b><br>     Study session on a conceptual plan for a safe and inclusive bike/pedestrian system, aiming to bring standards into the modern era and integrate population growth. Feedback sought on new bikeways/connections.<br>     <b>Earliest Mention:</b> 2/26/2025<br>     <b>Latest Mention:</b> 5/28/2025<br>     <a href='https://www.paloalto.gov/Departments/Transportation/Bicycling-Walking/bikepedplan' target='_blank'>More Information</a>     </div>`)[0];
+                popup_b9210fa5a1ee494c36c4151c1bc0f5f3.setContent(html_2b42b1f50d5cdd0fb5605b59a7cb6932);
+            
+        
+
+        marker_425b3740d60b1f592a0fbf21a8295e59.bindPopup(popup_b9210fa5a1ee494c36c4151c1bc0f5f3)
+        ;
+
+        
+    
+    
+            marker_425b3740d60b1f592a0fbf21a8295e59.bindTooltip(
+                `<div>
+                     
+    <h4>Bicycle and Pedestrian Transportation Plan Update</h4>
+    <b>Address:</b> Citywide<br>
+    <b>Earliest Mention:</b> 2/26/2025<br>
+    <b>Latest Mention:</b> 5/28/2025<br>
+    <b>Coordinates:</b> (37.4441, -122.1499)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_425b3740d60b1f592a0fbf21a8295e59.setIcon(icon_bfc8a6552eb645cc23b64a3f57111008);
+            
+    
+            var marker_a6b7aa19279061d7b81cac590f9fefba = L.marker(
+                [37.420881, -122.137308],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_4f4dd5c6d788b186153f3b161f57896e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_830768aee19636652e9b64887de19212 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6517b3c7099e366f407b12cc9f698e8 = $(`<div id="html_d6517b3c7099e366f407b12cc9f698e8" style="width: 100.0%; height: 100.0%;">     <b>El Camino Real Focus Area (Ordinance Amendment)</b><br>     Amendment to the ordinance implementing Housing Element program 3.4C 4C. Involves expanding geographic boundaries, adjusting development standards, affordable housing requirements, and special setbacks. Approved by City Council with additional modifications.<br>     <b>Earliest Mention:</b> 2/12/2025<br>     <b>Latest Mention:</b> 5/28/2025<br>     No public URL available.     </div>`)[0];
+                popup_830768aee19636652e9b64887de19212.setContent(html_d6517b3c7099e366f407b12cc9f698e8);
+            
+        
+
+        marker_a6b7aa19279061d7b81cac590f9fefba.bindPopup(popup_830768aee19636652e9b64887de19212)
+        ;
+
+        
+    
+    
+            marker_a6b7aa19279061d7b81cac590f9fefba.bindTooltip(
+                `<div>
+                     
+    <h4>El Camino Real Focus Area (Ordinance Amendment)</h4>
+    <b>Address:</b> El Camino Real corridor<br>
+    <b>Earliest Mention:</b> 2/12/2025<br>
+    <b>Latest Mention:</b> 5/28/2025<br>
+    <b>Coordinates:</b> (37.4209, -122.1373)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a6b7aa19279061d7b81cac590f9fefba.setIcon(icon_4f4dd5c6d788b186153f3b161f57896e);
+            
+    
+            var marker_617e22b0bbc24f6b290fd47626de2fae = L.marker(
+                [37.4300677, -122.1417839],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_c424b44cbbaf71f3ecbfd21636672f53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c5880c0e69baa730f0873a3891f9292b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cdf61676950190e7fd89c47f1d8b5cb3 = $(`<div id="html_cdf61676950190e7fd89c47f1d8b5cb3" style="width: 100.0%; height: 100.0%;">     <b>South Palo Alto Bike Ped Connectivity Project</b><br>     Project to improve bicycle and pedestrian accessibility across the rail corridor in southern Palo Alto. Identifies locally preferred crossing locations and design concepts for two new grade-separated crossings (15% designs).<br>     <b>Earliest Mention:</b> 3/26/2025<br>     <b>Latest Mention:</b> 5/14/2025<br>     <a href='https://www.paloalto.gov/Departments/Transportation/Transportation-Projects/South-Palo-Alto-BikePed-Connectivity' target='_blank'>More Information</a>     </div>`)[0];
+                popup_c5880c0e69baa730f0873a3891f9292b.setContent(html_cdf61676950190e7fd89c47f1d8b5cb3);
+            
+        
+
+        marker_617e22b0bbc24f6b290fd47626de2fae.bindPopup(popup_c5880c0e69baa730f0873a3891f9292b)
+        ;
+
+        
+    
+    
+            marker_617e22b0bbc24f6b290fd47626de2fae.bindTooltip(
+                `<div>
+                     
+    <h4>South Palo Alto Bike Ped Connectivity Project</h4>
+    <b>Address:</b> Southern Palo Alto (rail corridor)<br>
+    <b>Earliest Mention:</b> 3/26/2025<br>
+    <b>Latest Mention:</b> 5/14/2025<br>
+    <b>Coordinates:</b> (37.4301, -122.1418)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_617e22b0bbc24f6b290fd47626de2fae.setIcon(icon_c424b44cbbaf71f3ecbfd21636672f53);
+            
+    
+            var marker_ffd8a4188d941d4c8373761bc72e9c0b = L.marker(
+                [37.444122, -122.149915],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_0cf1123ff8b1312513a31a9c87cb2e80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_875c19129c53474f06b8f16c09503b46 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2fb19b92228f734d30bc7200c0262d3b = $(`<div id="html_2fb19b92228f734d30bc7200c0262d3b" style="width: 100.0%; height: 100.0%;">     <b>Capital Improvement Plan (CIP) Review</b><br>     Annual review of new capital improvement projects (e.g., natural environment, community services, transportation, land use) for consistency with the Comprehensive Plan. Includes vehicle and equipment replacement funding.<br>     <b>Earliest Mention:</b> 3/26/2025<br>     <b>Latest Mention:</b> 5/14/2025<br>     No public URL available.     </div>`)[0];
+                popup_875c19129c53474f06b8f16c09503b46.setContent(html_2fb19b92228f734d30bc7200c0262d3b);
+            
+        
+
+        marker_ffd8a4188d941d4c8373761bc72e9c0b.bindPopup(popup_875c19129c53474f06b8f16c09503b46)
+        ;
+
+        
+    
+    
+            marker_ffd8a4188d941d4c8373761bc72e9c0b.bindTooltip(
+                `<div>
+                     
+    <h4>Capital Improvement Plan (CIP) Review</h4>
+    <b>Address:</b> Citywide<br>
+    <b>Earliest Mention:</b> 3/26/2025<br>
+    <b>Latest Mention:</b> 5/14/2025<br>
+    <b>Coordinates:</b> (37.4441, -122.1499)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ffd8a4188d941d4c8373761bc72e9c0b.setIcon(icon_0cf1123ff8b1312513a31a9c87cb2e80);
+            
+    
+            var marker_cb59a28a60a74272aa42a71ea7209555 = L.marker(
+                [37.444122, -122.149915],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_466d76372de2037835c8557ab42ceb7f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee0783c55c5b0c9464849275efe2e5d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1d247342c4f39e1cdb423593e0817dd0 = $(`<div id="html_1d247342c4f39e1cdb423593e0817dd0" style="width: 100.0%; height: 100.0%;">     <b>Accessory Dwelling Unit (ADU) Ordinance Update</b><br>     Ordinance update to respond to Housing and Community Development (HCD) comments, addressing deferment of impact fees and streamlining the lien process. Approved by City Council on May 12th.<br>     <b>Earliest Mention:</b> 4/9/2025<br>     <b>Latest Mention:</b> 5/14/2025<br>     No public URL available.     </div>`)[0];
+                popup_ee0783c55c5b0c9464849275efe2e5d4.setContent(html_1d247342c4f39e1cdb423593e0817dd0);
+            
+        
+
+        marker_cb59a28a60a74272aa42a71ea7209555.bindPopup(popup_ee0783c55c5b0c9464849275efe2e5d4)
+        ;
+
+        
+    
+    
+            marker_cb59a28a60a74272aa42a71ea7209555.bindTooltip(
+                `<div>
+                     
+    <h4>Accessory Dwelling Unit (ADU) Ordinance Update</h4>
+    <b>Address:</b> Citywide<br>
+    <b>Earliest Mention:</b> 4/9/2025<br>
+    <b>Latest Mention:</b> 5/14/2025<br>
+    <b>Coordinates:</b> (37.4441, -122.1499)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb59a28a60a74272aa42a71ea7209555.setIcon(icon_466d76372de2037835c8557ab42ceb7f);
+            
+    
+            var marker_1795af21d5ff3c1cd5d879c11df5abfa = L.marker(
+                [37.415571, -122.126551],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_28fd057819a26e854be55737285eff02 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_28e214bef0f2fc0e4fed382468974017 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e6048254420b8bf3e299d0d03b98f04 = $(`<div id="html_0e6048254420b8bf3e299d0d03b98f04" style="width: 100.0%; height: 100.0%;">     <b>4075 El Camino Way</b><br>     Planned Community project. City Council remanded to PTC for additional redesign, specifically requesting removal of third-floor units to reduce height/bulk, aiming for 11-13 units instead of 16.<br>     <b>Earliest Mention:</b> 4/30/2025<br>     <b>Latest Mention:</b> 5/28/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Current-Planning/Projects/4075-El-Camino-Way' target='_blank'>More Information</a>     </div>`)[0];
+                popup_28e214bef0f2fc0e4fed382468974017.setContent(html_0e6048254420b8bf3e299d0d03b98f04);
+            
+        
+
+        marker_1795af21d5ff3c1cd5d879c11df5abfa.bindPopup(popup_28e214bef0f2fc0e4fed382468974017)
+        ;
+
+        
+    
+    
+            marker_1795af21d5ff3c1cd5d879c11df5abfa.bindTooltip(
+                `<div>
+                     
+    <h4>4075 El Camino Way</h4>
+    <b>Address:</b> 4075 El Camino Way<br>
+    <b>Earliest Mention:</b> 4/30/2025<br>
+    <b>Latest Mention:</b> 5/28/2025<br>
+    <b>Coordinates:</b> (37.4156, -122.1266)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1795af21d5ff3c1cd5d879c11df5abfa.setIcon(icon_28fd057819a26e854be55737285eff02);
+            
+    
+            var marker_46ca91ac75c301bdcd43b25ded025f53 = L.marker(
+                [37.420965, -122.101644],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_2f432c8d99656506056220850fa27b80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3e0fcbb77fe651114a4d91cc102dfc7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4457f8137f972d476739f6828250b161 = $(`<div id="html_4457f8137f972d476739f6828250b161" style="width: 100.0%; height: 100.0%;">     <b>788 San Antonio Road</b><br>     Pre-screening for a potential Planned Community zoning application to consider additional dwelling units, for a property recently approved for development.<br>     <b>Earliest Mention:</b> 5/14/2025<br>     <b>Latest Mention:</b> 5/14/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Current-Planning/Projects/788-San-Antonio-Road' target='_blank'>More Information</a>     </div>`)[0];
+                popup_b3e0fcbb77fe651114a4d91cc102dfc7.setContent(html_4457f8137f972d476739f6828250b161);
+            
+        
+
+        marker_46ca91ac75c301bdcd43b25ded025f53.bindPopup(popup_b3e0fcbb77fe651114a4d91cc102dfc7)
+        ;
+
+        
+    
+    
+            marker_46ca91ac75c301bdcd43b25ded025f53.bindTooltip(
+                `<div>
+                     
+    <h4>788 San Antonio Road</h4>
+    <b>Address:</b> 788 San Antonio Road<br>
+    <b>Earliest Mention:</b> 5/14/2025<br>
+    <b>Latest Mention:</b> 5/14/2025<br>
+    <b>Coordinates:</b> (37.4210, -122.1016)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46ca91ac75c301bdcd43b25ded025f53.setIcon(icon_2f432c8d99656506056220850fa27b80);
+            
+    
+            var marker_58d93bbac73599f71e66c3db08a81a72 = L.marker(
+                [37.420321, -122.101388],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_a1fff71b3186c9a654ab040d8b24165d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57c29f490d0f58379b40730102dd8c2b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_17b300c450eb256b12a61e863f723ba6 = $(`<div id="html_17b300c450eb256b12a61e863f723ba6" style="width: 100.0%; height: 100.0%;">     <b>800 San Antonio Road</b><br>     Pre-screening for a potential Planned Community zoning application to consider additional dwelling units, for a property recently approved for development.<br>     <b>Earliest Mention:</b> 5/14/2025<br>     <b>Latest Mention:</b> 5/14/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Current-Planning/Projects/800-San-Antonio-Road' target='_blank'>More Information</a>     </div>`)[0];
+                popup_57c29f490d0f58379b40730102dd8c2b.setContent(html_17b300c450eb256b12a61e863f723ba6);
+            
+        
+
+        marker_58d93bbac73599f71e66c3db08a81a72.bindPopup(popup_57c29f490d0f58379b40730102dd8c2b)
+        ;
+
+        
+    
+    
+            marker_58d93bbac73599f71e66c3db08a81a72.bindTooltip(
+                `<div>
+                     
+    <h4>800 San Antonio Road</h4>
+    <b>Address:</b> 800 San Antonio Road<br>
+    <b>Earliest Mention:</b> 5/14/2025<br>
+    <b>Latest Mention:</b> 5/14/2025<br>
+    <b>Coordinates:</b> (37.4203, -122.1014)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_58d93bbac73599f71e66c3db08a81a72.setIcon(icon_a1fff71b3186c9a654ab040d8b24165d);
+            
+    
+            var marker_d59514772ded54a8b7c85b35646d6662 = L.marker(
+                [37.444122, -122.149915],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_e3fbaa60246eed458827e57bc1466d1c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ac3db773aa452d9e8f6be76b5f8e9d2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2d86ed7809a0dfffd06f9a039ff10ba0 = $(`<div id="html_2d86ed7809a0dfffd06f9a039ff10ba0" style="width: 100.0%; height: 100.0%;">     <b>Senate Bill 1123 Urgency Ordinance</b><br>     State bill allowing for subdivision up to 10 lots (ministerial process), with local governments setting regulations. City Council approved an urgency ordinance. PTC will review for a permanent ordinance.<br>     <b>Earliest Mention:</b> 5/28/2025<br>     <b>Latest Mention:</b> 7/9/2025<br>     <a href='https://www.cityofpaloalto.org/files/assets/public/v/1/agendas-minutes-reports/reports/city-manager-reports-cmrs/year-archive/2019/id-10879-colleagues-memo-urgency-ordinance.pdf' target='_blank'>More Information</a>     </div>`)[0];
+                popup_1ac3db773aa452d9e8f6be76b5f8e9d2.setContent(html_2d86ed7809a0dfffd06f9a039ff10ba0);
+            
+        
+
+        marker_d59514772ded54a8b7c85b35646d6662.bindPopup(popup_1ac3db773aa452d9e8f6be76b5f8e9d2)
+        ;
+
+        
+    
+    
+            marker_d59514772ded54a8b7c85b35646d6662.bindTooltip(
+                `<div>
+                     
+    <h4>Senate Bill 1123 Urgency Ordinance</h4>
+    <b>Address:</b> Citywide<br>
+    <b>Earliest Mention:</b> 5/28/2025<br>
+    <b>Latest Mention:</b> 7/9/2025<br>
+    <b>Coordinates:</b> (37.4441, -122.1499)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d59514772ded54a8b7c85b35646d6662.setIcon(icon_e3fbaa60246eed458827e57bc1466d1c);
+            
+    
+            var marker_e7c63094c08fe9c958387f9f8d637521 = L.marker(
+                [37.416846, -122.10808],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_6e1a2b5537495ff581bed7b36bcc84fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57ff3313094883e71144b67f211eae2d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e4f7138e16fa5dac28857e98443d66f4 = $(`<div id="html_e4f7138e16fa5dac28857e98443d66f4" style="width: 100.0%; height: 100.0%;">     <b>Cubberly Community Center Master Plan</b><br>     Update on master planning process for Cubberly site (35 acres), exploring three conceptual site layouts and circulation plans. Contingent on a future bond measure. Focus on flexibility, inclusivity, sustainability, and affordability.<br>     <b>Earliest Mention:</b> 5/28/2025<br>     <b>Latest Mention:</b> 7/9/2025<br>     <a href='https://www.paloalto.gov/Departments/Community-Services/Help-Us-Improve-Cubberley' target='_blank'>More Information</a>     </div>`)[0];
+                popup_57ff3313094883e71144b67f211eae2d.setContent(html_e4f7138e16fa5dac28857e98443d66f4);
+            
+        
+
+        marker_e7c63094c08fe9c958387f9f8d637521.bindPopup(popup_57ff3313094883e71144b67f211eae2d)
+        ;
+
+        
+    
+    
+            marker_e7c63094c08fe9c958387f9f8d637521.bindTooltip(
+                `<div>
+                     
+    <h4>Cubberly Community Center Master Plan</h4>
+    <b>Address:</b> 4000 Middlefield Road<br>
+    <b>Earliest Mention:</b> 5/28/2025<br>
+    <b>Latest Mention:</b> 7/9/2025<br>
+    <b>Coordinates:</b> (37.4168, -122.1081)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e7c63094c08fe9c958387f9f8d637521.setIcon(icon_6e1a2b5537495ff581bed7b36bcc84fa);
+            
+    
+            var marker_2b3264bfefdf46b14e3829633ae73f9f = L.marker(
+                [37.443023, -122.165082],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_a200a2a07b62b0928e2f22823ecd8c6c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb489a11c62cff8f1b3039f677680eac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b41c335d80e7ff13bb2da02c66e81182 = $(`<div id="html_b41c335d80e7ff13bb2da02c66e81182" style="width: 100.0%; height: 100.0%;">     <b>400 Mitchell Lane (Conditional Use Permit)</b><br>     Request for a Conditional Use Permit (CUP) to allow private university use (Stanford Door School of Sustainability) within an existing, formerly vacant building. Includes ADA, HVAC, electrical, lighting, and fire safety improvements. PTC recommended approval to City Council.<br>     <b>Earliest Mention:</b> 7/9/2025<br>     <b>Latest Mention:</b> 7/30/2025<br>     <a href='https://www.paloaltoonline.com/stanford-university/2025/07/31/stanford-clears-major-hurdle-in-plan-to-repurpose-former-red-cross-building/' target='_blank'>More Information</a>     </div>`)[0];
+                popup_fb489a11c62cff8f1b3039f677680eac.setContent(html_b41c335d80e7ff13bb2da02c66e81182);
+            
+        
+
+        marker_2b3264bfefdf46b14e3829633ae73f9f.bindPopup(popup_fb489a11c62cff8f1b3039f677680eac)
+        ;
+
+        
+    
+    
+            marker_2b3264bfefdf46b14e3829633ae73f9f.bindTooltip(
+                `<div>
+                     
+    <h4>400 Mitchell Lane (Conditional Use Permit)</h4>
+    <b>Address:</b> 400 Mitchell Lane<br>
+    <b>Earliest Mention:</b> 7/9/2025<br>
+    <b>Latest Mention:</b> 7/30/2025<br>
+    <b>Coordinates:</b> (37.4430, -122.1651)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2b3264bfefdf46b14e3829633ae73f9f.setIcon(icon_a200a2a07b62b0928e2f22823ecd8c6c);
+            
+    
+            var marker_34b345b9996d1793e6613e5a13a4021b = L.marker(
+                [37.416266, -122.103405],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_1bc06b4eb8ddf6e3c738877a3faaa346 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c715ed714fde1677430cb36540fc25a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0205e94a0f05ec3bf36c4612aa90d2aa = $(`<div id="html_0205e94a0f05ec3bf36c4612aa90d2aa" style="width: 100.0%; height: 100.0%;">     <b>San Antonio Road Area Plan Update</b><br>     First discussion on initial work, outreach, and next steps for the area plan update.<br>     <b>Earliest Mention:</b> 7/30/2025<br>     <b>Latest Mention:</b> 7/30/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Housing-Policies-Projects/San-Antonio-Road-Area-Plan' target='_blank'>More Information</a>     </div>`)[0];
+                popup_c715ed714fde1677430cb36540fc25a8.setContent(html_0205e94a0f05ec3bf36c4612aa90d2aa);
+            
+        
+
+        marker_34b345b9996d1793e6613e5a13a4021b.bindPopup(popup_c715ed714fde1677430cb36540fc25a8)
+        ;
+
+        
+    
+    
+            marker_34b345b9996d1793e6613e5a13a4021b.bindTooltip(
+                `<div>
+                     
+    <h4>San Antonio Road Area Plan Update</h4>
+    <b>Address:</b> San Antonio Road Area<br>
+    <b>Earliest Mention:</b> 7/30/2025<br>
+    <b>Latest Mention:</b> 7/30/2025<br>
+    <b>Coordinates:</b> (37.4163, -122.1034)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_34b345b9996d1793e6613e5a13a4021b.setIcon(icon_1bc06b4eb8ddf6e3c738877a3faaa346);
+            
+    
+            var marker_33eff42572a16db716f539a3e85f6196 = L.marker(
+                [37.407201, -122.121081],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_421d020051c41d58301c091909ecbf0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5ac972b124661364415b773c9499f164 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7be8fcd049e57579662a549fbf9a1175 = $(`<div id="html_7be8fcd049e57579662a549fbf9a1175" style="width: 100.0%; height: 100.0%;">     <b>4256 El Camino Real</b><br>     Pre-screening for a future housing development project under the Planned Community (PHC) process.<br>     <b>Earliest Mention:</b> 7/30/2025<br>     <b>Latest Mention:</b> 7/30/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Current-Planning/Projects/4256-El-Camino-Real' target='_blank'>More Information</a>     </div>`)[0];
+                popup_5ac972b124661364415b773c9499f164.setContent(html_7be8fcd049e57579662a549fbf9a1175);
+            
+        
+
+        marker_33eff42572a16db716f539a3e85f6196.bindPopup(popup_5ac972b124661364415b773c9499f164)
+        ;
+
+        
+    
+    
+            marker_33eff42572a16db716f539a3e85f6196.bindTooltip(
+                `<div>
+                     
+    <h4>4256 El Camino Real</h4>
+    <b>Address:</b> 4256 El Camino Real<br>
+    <b>Earliest Mention:</b> 7/30/2025<br>
+    <b>Latest Mention:</b> 7/30/2025<br>
+    <b>Coordinates:</b> (37.4072, -122.1211)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_33eff42572a16db716f539a3e85f6196.setIcon(icon_421d020051c41d58301c091909ecbf0a);
+            
+    
+            var marker_4a2698d931ddc1c6d6806afbebcd7d14 = L.marker(
+                [37.444642, -122.158379],
+                {
+}
+            ).addTo(map_ad6aeae8e2138a983fafc36cc253327d);
+        
+    
+            var icon_c221b91cefd08aeebe4f8c59cea16076 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_31f277fd3452bcb3b661b2de2dc6a46a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6987975264b69233a0a23f0ec8564b09 = $(`<div id="html_6987975264b69233a0a23f0ec8564b09" style="width: 100.0%; height: 100.0%;">     <b>332 Forest Avenue</b><br>     Pre-screening for a future housing development project under the Planned Community (PHC) process.<br>     <b>Earliest Mention:</b> 7/30/2025<br>     <b>Latest Mention:</b> 7/30/2025<br>     <a href='https://www.paloalto.gov/Departments/Planning-Development-Services/Current-Planning/Projects/332-Forest-Avenue' target='_blank'>More Information</a>     </div>`)[0];
+                popup_31f277fd3452bcb3b661b2de2dc6a46a.setContent(html_6987975264b69233a0a23f0ec8564b09);
+            
+        
+
+        marker_4a2698d931ddc1c6d6806afbebcd7d14.bindPopup(popup_31f277fd3452bcb3b661b2de2dc6a46a)
+        ;
+
+        
+    
+    
+            marker_4a2698d931ddc1c6d6806afbebcd7d14.bindTooltip(
+                `<div>
+                     
+    <h4>332 Forest Avenue</h4>
+    <b>Address:</b> 332 Forest Avenue<br>
+    <b>Earliest Mention:</b> 7/30/2025<br>
+    <b>Latest Mention:</b> 7/30/2025<br>
+    <b>Coordinates:</b> (37.4446, -122.1584)<br>
+    <p><small>Click for more info</small></p>
+    
+                 </div>`,
+                {
+  "maxWidth": 400,
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a2698d931ddc1c6d6806afbebcd7d14.setIcon(icon_c221b91cefd08aeebe4f8c59cea16076);
+            
+</script>
+</html>
