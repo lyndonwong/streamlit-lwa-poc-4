@@ -179,6 +179,10 @@ for idx, row in df.iterrows():
         icon=folium.Icon(color='green', icon='info-sign') # Changed icon color and type for San Carlos projects
     ).add_to(m)
 
+# --- ADD THIS LINE TO SAVE THE MAP TO AN HTML FILE ---
+m.save("my_interactive_map.html")
+# --- END OF NEW CODE ---
+
 # Display the map in Streamlit
 # Add st.container and key to st_folium to control rendering
 # --- DEPRECATED 8/1/2025 to eliminate empty space bug ---
